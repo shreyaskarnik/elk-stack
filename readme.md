@@ -15,3 +15,7 @@ There is a sample [logstash pipeline](https://www.elastic.co/guide/en/logstash/c
 * clone this repo `cd elk-stack` and run `docker-compose up -d`
 
 * head to <http://localhost:5601> to explore the data with Kibana
+
+## Bonus if you want to explore kibana with some real data you can try metricbeat to view metrics from the machine you are currently on
+
+* `docker-compose -f docker-compose-elk-metricbeat.yml up`

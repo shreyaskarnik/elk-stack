@@ -28,16 +28,6 @@ services:
       elk:
         aliases:
           - es
-  logstash:
-    image: docker.elastic.co/logstash/logstash:6.0.0
-    container_name: logstash
-    volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./logstash/pipeline:/usr/share/logstash/pipeline
-    depends_on:
-      - es
-    networks:
-      elk:
   kibana:
     image: docker.elastic.co/kibana/kibana:6.0.0
     container_name: kibana
@@ -46,9 +36,21 @@ services:
     restart: always
     ports:
      - "5601:5601"
-    depends_on:
-      - es
     networks:
       elk:
+        aliases:
+          - kibana
+    depends_on:
+      - es
+  metricbeat:
+    image: docker.elastic.co/beats/metricbeat:6.0.0
+    container_name: metricbeat
+    volumes:
+      - ./metricbeat/metricbeat.yml:/usr/share/metricbeat/metricbeat.yml
+    restart: always
+    networks:
+      elk:
+    depends_on:
+      - kibana
 networks:
   elk:
