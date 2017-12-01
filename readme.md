@@ -13,3 +13,5 @@ There is a sample [logstash pipeline](https://www.elastic.co/guide/en/logstash/c
 * [Install Docker Compose](https://docs.docker.com/compose/install/)
 
 * clone this repo `cd elk-stack` and run `docker-compose up -d`
+
+* head to <http://localhost:5601> to explore the data with Kibana
