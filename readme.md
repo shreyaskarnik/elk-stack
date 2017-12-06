@@ -16,7 +16,16 @@ There is a sample [logstash pipeline](https://www.elastic.co/guide/en/logstash/c
 
 * head to <http://localhost:5601> to explore the data with Kibana
 
-## Bonus if you want to explore kibana with some real data you can try metricbeat to view metrics from the machine you are currently on
+## Bonus
+
+### If you want to explore kibana with some real data you can try metricbeat to view metrics from the machine you are currently on
+
+#### Metricbeat
 
 * `docker-compose -f docker-compose-elk-metricbeat.yml up`
 * head to System Overview Dashboard <http://localhost:5601/app/kibana#/dashboard/Metricbeat-system-overview>
+
+#### Packetbeat
+
+* `docker-compose -f docker-compose-elk-packetbeat.yml up`
+* head to Packet Beat Overview Dashboard <http://localhost:5601/app/kibana#/dashboard/Packetbeat-Dashboard>
