@@ -1,0 +1,16 @@
+packetbeat.interfaces.device: any
+packetbeat.protocols:
+
+- type: dns
+  ports: [53]
+
+  include_authorities: true
+  include_additionals: true
+
+- type: http
+  ports: [80, 8080, 8081, 5000, 8002]
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+setup.kibana:
+  host: "localhost:5601"
+setup.dashboards.enabled: true
