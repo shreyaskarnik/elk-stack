@@ -1,7 +1,7 @@
 version: '3'
 services:
   es:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.1.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.1
     container_name: es
     environment:
       - xpack.security.enabled=false
@@ -29,7 +29,7 @@ services:
         aliases:
           - es
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.1.0
+    image: docker.elastic.co/kibana/kibana:6.2.1
     container_name: kibana
     environment:
       - ELASTICSEARCH_URL=http://es:9200
@@ -43,7 +43,7 @@ services:
     depends_on:
       - es
   packetbeat:
-    image: docker.elastic.co/beats/packetbeat:6.0.0
+    image: docker.elastic.co/beats/packetbeat:6.2.1
     container_name: packetbeat
     privileged: true
     volumes:
